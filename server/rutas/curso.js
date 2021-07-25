@@ -4,7 +4,7 @@ const Curso = require('../modelos/curso');
 const {
   verificaToken,
   verificaAdmin_role,
-} = require('../middlewares/autenticacion');
+} = require('../middlewares/autentication');
 
 const _ = require('underscore');
 const app = express();
@@ -15,7 +15,7 @@ app.get('/cursos', function (req, res) {
   let desde = req.query.desde || 0;
   desde = Number(desde);
 
-  let limite = req.query.limite || 5;
+  let limite = req.query.limite || 10;
   limite = Number(limite);
 
   Curso.find({ estado: true })

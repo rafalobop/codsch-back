@@ -6,7 +6,7 @@ const Usuario = require('../modelos/usuario');
 const {
   verificaToken,
   verificaAdmin_role,
-} = require('../middlewares/autenticacion');
+} = require('../middlewares/autentication');
 
 const app = express();
 
@@ -14,7 +14,7 @@ const app = express();
 app.get('/usuarios', function (req, res) {
   let desde = req.query.desde || 0;
   desde = Number(desde);
-  let limite = req.query.limite || 5;
+  let limite = req.query.limite || 10;
   limite = Number(limite);
 
   // res.json("GET usuarios");
